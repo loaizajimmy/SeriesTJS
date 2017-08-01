@@ -1,7 +1,7 @@
 doctype html
 html(lang="es")
     head
-        title Series TJS
+        title=title
 
         //Bootstrap
         link(href="plugins/bootstrap-4.0.0/css/bootstrap.min.css", rel="stylesheet")
@@ -9,9 +9,21 @@ html(lang="es")
         //Font awesome
         link(href="plugins/font-awesome/css/font-awesome.css", rel="stylesheet")
 
+        //App css
+        link(href="css/app.css", rel="stylesheet")
+
     body
-        h1 hello world
+        h1 debe ir navbar
+        hr
+
         block content
+
+        hr
+        footer(class='text-center')
+            p
+                | Mateo
+                | Sebastían
+                | Jimmy
 
         //Jquery
         script(src="js/jquery-3.2.1.js")
