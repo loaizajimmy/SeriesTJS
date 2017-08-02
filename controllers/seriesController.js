@@ -8,8 +8,10 @@ module.exports = {
             url:`${config.host}:${config.port}/api/Series`,
             method: 'GET'
         }, function (err, httpResponse, body) {
-            console.log(body);
-            res.json(JSON.parse(body));
+            res.render('series/index',{
+                title:"series",
+                series: JSON.parse(body)
+            })
         });
     }
 };
