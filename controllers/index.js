@@ -9,7 +9,6 @@ let files = fs.readdirSync(__dirname);
 files.forEach(function (file) {
     const fileName = path.basename(file, '.js');
     if (fileName !== "index") {
-        console.log(fileName);
         exports[fileName] = require(`./${fileName}`);
     }
 });
