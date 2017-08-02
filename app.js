@@ -2,7 +2,7 @@ const express = require('express');
 let bodyParser = require('body-parser');
 const path = require('path');
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 2323;
 
 let app = express();
 
@@ -17,8 +17,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Routes
+const seriesRoutes = require('./routes/series');
 const routes = require('./routes/routes');
+
 app.use(routes);
+app.use("series", seriesRoutes);
 
 
 //view engine
