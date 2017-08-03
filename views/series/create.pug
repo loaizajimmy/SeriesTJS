@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+
+    div(class='col-xs-12 col-md-8 offset-md-4 col-lg-6 offset-lg-3')
+        h4 Crear nueva serie
+        hr
+        form(action='/Series/create', method='POST')
+            div(class="form-group")
+                label(for="nombre") Nombre
+                input(class="form-control" id="nombre" name="nombre" placeholder="Nombre" required)
+
+            div(class="form-group")
+                label(for="fechaEstreno") Fecha Estreno
+                input(class="form-control" id="fechaEstreno" name="fechaEstreno" placeholder="Fecha de Estreno" type="date" required)
+
+            div(class="form-group")
+                label(for="checkbox1") En Emision
+                input( id="checkbox1" name="enEmision" type="checkbox" required)
+
+            div(class="form-group")
+                label(for="genero") Genero
+                input(class="form-control" id="genero" name="genero" placeholder="Genero" required)
+
+            div(class="form-group")
+                label(for="imagen") Imagen
+                input(class="form-control" id="imagen" name="imagen" placeholder="Imagen" required)
+            div(class="form-group")
+                input(type="submit" value="Create" class="btn btn-default")

@@ -2,6 +2,8 @@ extends ../layout
 
 block content
     div(class='container-fluid')
+        a(href='/series/create')
+            i(class='fa fa-3x fa-plus-circle')
         h2(class='text-success') Lista de series
         div(class='row')
             for serie in series

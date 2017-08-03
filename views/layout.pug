@@ -4,20 +4,20 @@ html(lang="es")
         title=title
 
         //Bootstrap
-        link(href="plugins/bootstrap-4.0.0/css/bootstrap.min.css", rel="stylesheet")
+        link(href="/plugins/bootstrap-4.0.0/css/bootstrap.min.css", rel="stylesheet")
 
         //Font awesome
-        link(href="plugins/font-awesome/css/font-awesome.css", rel="stylesheet")
+        link(href="/plugins/font-awesome/css/font-awesome.css", rel="stylesheet")
 
         //App css
-        link(href="css/app.css", rel="stylesheet")
-        link(href="css/effects.css", rel="stylesheet")
+        link(href="/css/app.css", rel="stylesheet")
+        link(href="/css/effects.css", rel="stylesheet")
 
     body
         h1 Series TJS
         hr
-
-        block content
+        div(class='container')
+            block content
 
         hr
         footer(class='text-center')
@@ -27,8 +27,10 @@ html(lang="es")
                 | Jimmy
 
         //Jquery
-        script(src="js/jquery-3.2.1.js")
+        script(src="/js/jquery-3.2.1.js")
+        script(src="/js/seriesScript.js")
+
 
         //Bootstrap
-        script(src="plugins/tether/tether.min.js")
-        script(src="plugins/bootstrap-4.0.0/js/bootstrap.min.js")
+        script(src="/plugins/tether/tether.min.js")
+        script(src="/plugins/bootstrap-4.0.0/js/bootstrap.min.js")
