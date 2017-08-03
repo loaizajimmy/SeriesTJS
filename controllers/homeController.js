@@ -3,9 +3,7 @@ let request = require('request');
 module.exports = {
 
     index: function (req, res, next) {
-        res.render('index', {
-            title: "Mateo"
-        });
+        res.redirect('series')
     },
 
 /*    getBuses: function (req, res, next) {
