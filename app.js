@@ -23,7 +23,6 @@ const seriesRoutes = require("./routes/series");
 app.use(routes);
 app.use('/series', seriesRoutes);
 
-
 //view engine
 app.set("view engine", "pug");
 

@@ -5,12 +5,25 @@ module.exports = {
     //Get all series
     getSeries: function (req, res) {
         request({
-            url: `${config.host}:${config.port}/api/Series`,
+            url:`${config.host}:${config.port}/api/Series`,
             method: 'GET'
         }, function (err, httpResponse, body) {
-            res.render('series/index', {
-                title: "series",
+
+            res.render('series/index',{
+                title:"series",
                 series: JSON.parse(body)
+            })
+        });
+    },
+
+    getSerie: function (req, res) {
+        request({
+            url:`${config.host}:${config.port}/api/Series/${req.params.serieID}`,
+            method: 'GET'
+        }, function (err, httpResponse, body) {
+            res.render('series/details',{
+                title:"Serie Detail",
+                serie: JSON.parse(body)
             })
         });
     },
@@ -36,6 +49,5 @@ module.exports = {
             res.redirect('/series');
             //res.json(JSON.parse(body));
         });
-    },
-
+    }
 };

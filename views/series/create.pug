@@ -1,14 +1,14 @@
 extends ../layout
 
 block content
-
-    div(class='col-xs-12 col-md-8 offset-md-4 col-lg-6 offset-lg-3')
-        h4 Crear nueva serie
-        hr
+    h4 Crear nueva serie
+    hr
+    div(class='col-xs-12 col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-3')
         form(action='/Series/create', method='POST')
             div(class="form-group")
                 label(for="nombre") Nombre
-                input(class="form-control" id="nombre" name="nombre" placeholder="Nombre" required)
+                div(class='')
+                    input(class="form-control" id="nombre" name="nombre" placeholder="Nombre" required)
 
             div(class="form-group")
                 label(for="fechaEstreno") Fecha Estreno
@@ -16,7 +16,7 @@ block content
 
             div(class="form-group")
                 label(for="checkbox1") En Emision
-                input( id="checkbox1" name="enEmision" type="checkbox" required)
+                input( id="checkbox1" name="enEmision" type="checkbox")
 
             div(class="form-group")
                 label(for="genero") Genero
@@ -25,5 +25,6 @@ block content
             div(class="form-group")
                 label(for="imagen") Imagen
                 input(class="form-control" id="imagen" name="imagen" placeholder="Imagen" required)
+
             div(class="form-group")
                 input(type="submit" value="Create" class="btn btn-default")
