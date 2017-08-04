@@ -24,7 +24,7 @@ block content
 
         div(class='col-xs-12 col-md-6 col-lg-8 col-lg-offset-1 serie-detail')
             div(class='row')
-                a(href='/capitulos/create/'+temporada.temporadaID)
+                a(href='/capitulos/create/' + temporada.temporadaID)
                     i(class="fa fa-3x fa-plus-circle" aria-hidden="true")
             div(class='top-space')
                 table(id='tablaTemporadas' class='table table-responsive tablaTemporadas')
@@ -42,9 +42,9 @@ block content
                                     div(class='options')
                                         a(href='#' id='play-option' data-src=capitulo.video data-toggle="tooltip" data-placement="top" title="Detalles")
                                             i(class="fa fa-2x fa-play-circle")
-                                        a(href="#" data-toggle="tooltip" data-placement="top" title="Editar")
+                                        a(href="/capitulos/edit/" + capitulo.capituloID data-toggle="tooltip" data-placement="top" title="Editar")
                                             i(class='fa fa-2x fa-edit')
-                                        a(href="#"  data-toggle="tooltip" data-placement="top" title="Eliminar")
+                                        a(href="/capitulos/delete/" + capitulo.capituloID  data-toggle="tooltip" data-placement="top" title="Eliminar")
                                             i(class="fa fa-2x fa-trash")
         hr
         div(class='row')
@@ -55,8 +55,8 @@ block content
 
 
         div(class='col-xs-12 options')
-            a(href='#' ) Editar
-            a(href='#') Eliminar
-            a(href='/series/details/'+serie.serieID) Volver a la lista
+            a(href='/temporadas/edit/' + temporada.temporadaID ) Editar
+            a(href='/temporadas/delete/' + temporada.temporadaID) Eliminar
+            a(href='/series/details/' + serie.serieID) Volver a la lista
 
 

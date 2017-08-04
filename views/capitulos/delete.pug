@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+    h2 #{capitulo.temporada.serie.nombre}
+    h3 Temporada #{capitulo.temporada.numero}
+    p  #{capitulo.numero}. #{capitulo.nombre}
+    div
+        hr
+        div
+            form(action='/capitulos/delete/' + capitulo.capituloID + '?_method=DELETE' method='POST')
+                div(class="form-group")
+                    input(class="form-control" id="temporadaID" name="temporadaID" value=capitulo.temporadaID type='hidden')
+                div(class="form-group form-options")
+                    input(type="submit" value="Borrar" class="btn btn-danger")
+                    a(class='btn btn-default' href='/temporadas/details/' + capitulo.temporadaID) Cancelar
+
+

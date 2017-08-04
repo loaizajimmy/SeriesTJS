@@ -29,5 +29,7 @@ block content
                 label(for="imagen") Imagen
                 input(class="form-control" id="imagen" name="imagen" value=serie.image placeholder="Imagen" required)
 
-            div(class="form-group")
+            div(class="form-group form-options")
                 input(type="submit" value="Edit" class="btn btn-primary" id='btn-edit')
+                a(class='btn btn-default' href='/series/details/' + serie.serieID) Cancelar
+

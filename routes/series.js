@@ -14,8 +14,6 @@ router.route('/Delete/:serieID')
     .get(controllers.seriesController.deleteSerieGet)
     .delete(controllers.seriesController.deleteSerie);
 
-
-
 router.route('/edit/:serieID')
     .get(controllers.seriesController.editGet)
     .put(controllers.seriesController.editPostMethod);

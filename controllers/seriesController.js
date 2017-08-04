@@ -33,7 +33,7 @@ module.exports = {
         });
     },
     postSerie: function (req, res) {
-        //console.log(req.body);
+        console.log(req.body);
         request({
             url: `${config.host}:${config.port}/api/Series`,
             method: 'POST',
@@ -112,11 +112,11 @@ module.exports = {
     },
     deleteSerieGet: function (req, res) {
         request({
-            url:`${config.host}:${config.port}/api/Series/${req.params.serieID}`,
+            url: `${config.host}:${config.port}/api/Series/${req.params.serieID}`,
             method: 'GET'
         }, function (err, httpResponse, body) {
-            res.render('series/delete',{
-                title:"Delete",
+            res.render('series/delete', {
+                title: "Delete",
                 serie: JSON.parse(body)
             })
         });

@@ -49,9 +49,9 @@ block content
                                     div(class='options')
                                         a(href='/temporadas/details/' + temporada.temporadaID data-toggle="tooltip" data-placement="top" title="Detalles")
                                             i(class="fa fa-2x fa-info-circle")
-                                        a(href="#" data-toggle="tooltip" data-placement="top" title="Editar")
+                                        a(href='/temporadas/edit/' + temporada.temporadaID data-toggle="tooltip" data-placement="top" title="Editar")
                                             i(class='fa fa-2x fa-edit')
-                                        a(href="#"  data-toggle="tooltip" data-placement="top" title="Eliminar")
+                                        a(href="/temporadas/delete/" + temporada.temporadaID  data-toggle="tooltip" data-placement="top" title="Eliminar")
                                             i(class="fa fa-2x fa-trash")
 
 

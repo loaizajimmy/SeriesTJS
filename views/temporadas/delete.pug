@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+    h2 Delete
+    h3 Are you sure you want to delete this?
+    div
+        h4 Temporada
+        hr
+        dl(class='top-space')
+            dt Fecha de Estreno
+            dd #{temporada.fechaEstreno}
+
+            dt ¿Está en emisíon?
+            dd
+                if temporada.enEmision
+                    span(class="label label-success") En emision
+                else
+                    span(class="label label-danger") Finalizada
+            dt Valor
+            dd #{temporada.valor}
+
+        div
+            form(action='/temporadas/delete/' + temporada.temporadaID + '?_method=DELETE' method='POST')
+                div(class="form-group")
+                    input(class="form-control" id="serieID" name="serieID" value=temporada.serieID type='hidden')
+                div(class="form-group form-options")
+                    input(type="submit" value="Borrar" class="btn btn-danger")
+                    a(class='btn btn-default' href='/temporadas/details/' + temporada.temporadaID) Cancelar
+

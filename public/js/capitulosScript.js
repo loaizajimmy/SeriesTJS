@@ -1,7 +1,7 @@
 $(function () {
     $('a#play-option').on('click', function () {
         const src = $(this).attr('data-src');
-        let iframe = `<iframe src="${src}">`;
+        let iframe = `<iframe src="${src}" allowfullscreen>`;
         $('#reproductor').html(iframe);
         $('.hidden').removeClass('hidden');
     });

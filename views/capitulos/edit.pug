@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+    h4 Editar Capitulo #{capitulo.numero}
+    h5 #{capitulo.temporada.serie.nombre}
+    p Temporada #{capitulo.temporada.numero}
+    hr
+    div(class='col-xs-12 col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-3')
+        //form(id = 'formEdit' action="javascript:void(0);")
+        form(id = 'formEdit' action="/capitulos/edit/" + capitulo.capituloID + "?_method=PUT"  method='POST')
+            div(class="form-group")
+                input(class="form-control" id="temporadaID" name="temporadaID" value=capitulo.temporadaID type='hidden')
+
+            div(class="form-group")
+                label(for="numero") Número
+                input(class="form-control" id="numero" name="numero" value=capitulo.numero placeholder="Número" type='number' required)
+
+            div(class="form-group")
+                label(for="nombre") Nombre
+                input(class="form-control" id="nombre" name="nombre" value=capitulo.nombre placeholder="Nombre" required)
+
+            div(class="form-group")
+                label(for="video") Enlace
+                input(class="form-control" id="video" name="video" value=capitulo.video placeholder="Enlace" required)
+
+            div(class="form-group form-options")
+                input(type="submit" value="Guardar" class="btn btn-primary" id='btn-edit')
+                a(class='btn btn-default' href='/temporadas/details/' + capitulo.temporadaID) Cancelar
+
