@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+    h4 #{serie.nombre}
+    p Agregar Temporada
+    hr
+    div(class='col-xs-12 col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-3')
+        form(action='/Temporadas/create', method='POST', class='form-horizontal')
+            div(class="form-group")
+                label(for="numero") Número
+                input(class="form-control" id="numero" name="numero" placeholder="Número" type='number' required, aria-errormessage='Perra')
+
+            div(class="form-group")
+                label(for="enEmision") En Emision
+                input( id="enEmision" name="enEmision" type="checkbox")
+
+            div(class="form-group")
+                label(for="valor") Valor
+                input(class="form-control" id="valor" name="valor" placeholder="Valor" type='number' required)
+
+            div(class="form-group")
+                label(for="fechaEstreno") Fecha Estreno
+                input(class="form-control" id="fechaEstreno" name="fechaEstreno" placeholder="Fecha de Estreno" type="date" required)
+
+            div(class="form-group")
+                input(class="form-control" id="serieID" name="serieID" type="hidden" value=serie.serieID)
+
+            div(class="form-group")
+                input(type="submit" value="Create" class="btn btn-primary")
+                a(class='btn btn-default' href='/series/details/' + serie.serieID) Cancel

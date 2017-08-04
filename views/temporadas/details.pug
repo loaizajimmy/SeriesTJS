@@ -1,61 +1,62 @@
 extends ../layout
 
 block content
-    h1=serie.nombre
     div(class='row')
         div(class='col-xs-12 col-md-4 col-lg-3 serie-detail')
-            img(src=serie.image, class='img-responsive')
+
+            h3=serie.nombre
+            p Temporada #{temporada.numero}
             hr
-            dl
+
+            dl(class='top-space')
                 dt Fecha de Estreno
-                dd #{serie.fechaEstreno}
+                dd #{temporada.fechaEstreno}
 
                 dt ¿Está en emisíon?
                 dd
-                    if serie.enEmision
+                    if temporada.enEmision
                         span(class="label label-success") En emision
                     else
                         span(class="label label-danger") Finalizada
-                dt Género
-                dd #{serie.genero}
+                dt Valor
+                dd #{temporada.valor}
 
 
         div(class='col-xs-12 col-md-6 col-lg-8 col-lg-offset-1 serie-detail')
             div(class='row')
-                a(href='/temporadas/create/' + serie.serieID)
+                a(href='/capitulos/create/'+temporada.temporadaID)
                     i(class="fa fa-3x fa-plus-circle" aria-hidden="true")
             div(class='top-space')
                 table(id='tablaTemporadas' class='table table-responsive tablaTemporadas')
                     thead(class="text-info")
                         tr
-                            th Temporada
-                            th Capítulos
-                            th Estado
-                            th Valor
-                            th Opciones
+                            th(class='col-lg-1') Capitulo
+                            th Nombre
+                            th(class='col-lg-3') Opciones
                     tbody
-                        for temporada in serie.temporadas
+                        for capitulo in temporada.capitulos
                             tr
-                                td Temporada #{temporada.numero}
-                                td 1
-                                td
-                                    if temporada.enEmision
-                                        span(class="label label-success") En emision
-                                    else
-                                        span(class="label label-danger") Finalizada
-                                td #{temporada.valor}
+                                td #{capitulo.numero}
+                                td #{capitulo.nombre}
                                 td
                                     div(class='options')
-                                        a(href='/temporadas/details/' + temporada.temporadaID data-toggle="tooltip" data-placement="top" title="Detalles")
-                                            i(class="fa fa-2x fa-info-circle")
+                                        a(href='#' id='play-option' data-src=capitulo.video data-toggle="tooltip" data-placement="top" title="Detalles")
+                                            i(class="fa fa-2x fa-play-circle")
                                         a(href="#" data-toggle="tooltip" data-placement="top" title="Editar")
                                             i(class='fa fa-2x fa-edit')
                                         a(href="#"  data-toggle="tooltip" data-placement="top" title="Eliminar")
                                             i(class="fa fa-2x fa-trash")
+        hr
+        div(class='row')
+            div(class='col-xs-11 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 reproductor' id='reproductor')
+            div(class='col-xs-1 text-left hidden' id='close-reproductor')
+                a(href='#' id='btn-close')
+                    i(class='fa fa-2x fa-close')
 
 
         div(class='col-xs-12 options')
-            a(href='/series/edit/' +serie.serieID ) Editar
+            a(href='#' ) Editar
             a(href='#') Eliminar
-            a(href='/series') Volver a la lista
+            a(href='/series/details/'+serie.serieID) Volver a la lista
+
 
