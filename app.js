@@ -21,8 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const routes = require('./routes/routes');
 const seriesRoutes = require("./routes/series");
 app.use(routes);
-app.use('series', seriesRoutes);
-
+app.use('/series', seriesRoutes);
 
 //view engine
 app.set("view engine", "pug");

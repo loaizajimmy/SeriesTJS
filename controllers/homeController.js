@@ -3,7 +3,7 @@ let request = require('request');
 module.exports = {
 
     index: function (req, res, next) {
-        res.redirect('series')
+        res.redirect('/series');
     },
 
 /*    getBuses: function (req, res, next) {

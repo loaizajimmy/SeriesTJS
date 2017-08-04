@@ -1,0 +1,67 @@
+extends ../layout
+
+block content
+    h1=serie.nombre
+    div(class='row')
+        div(class='col-xs-6 col-md-4 col-lg-3 serie-detail')
+            img(src=serie.image, class='img-fluid')
+            hr
+            dl
+                dt Fecha de Estreno
+                dd #{serie.fechaEstreno}
+
+                dt ¿Está en emisíon?
+                dd
+                    if serie.enEmision
+                        span(class="badge badge-success") En emision
+                    else
+                        span(class="badge badge-danger") Finalizada
+                dt Género
+                dd #{serie.genero}
+
+                a(class='label label-danger' href="/series/Delete/" + serie.serieID) Eliminar
+
+
+        div(class='col-xs-6 col-md-6 col-lg-8 offset-lg-1 serie-detail')
+            div(class='row')
+                a(href='#')
+                    i(class="fa fa-3x fa-plus-circle" aria-hidden="true")
+            div(class='top-space')
+                table(id='tablaTemporadas' class='table tablaTemporadas')
+                    thead(class="text-info")
+                        tr
+                            th Temporada
+                            th Capítulos
+                            th Estado
+                            th Valor
+                            th Opciones
+                    tbody
+                        for temporada in serie.temporadas
+                            tr
+                                td Temporada #{temporada.numero}
+                                td 1
+                                td
+                                    if temporada.enEmision
+                                        span(class="badge badge-success") En emision
+                                    else
+                                        span(class="badge badge-danger") Finalizada
+                                td
+                                    #{temporada.valor}
+
+                                td
+                                    a(href="#" )
+                                        i(class="fa fa-2x fa-info-circle")
+                                    a(href="#" )
+                                        i(class='fa fa-2x fa-edit')
+                                    a(href="#" )
+                                        i(class="fa fa-2x fa-trash")
+
+        div(class='row options')
+            a(href='#') Editar
+            a(href='#') Eliminar
+            a(href='/series') Volver a la lista
+
+
+
+
+

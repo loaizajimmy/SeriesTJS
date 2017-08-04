@@ -3,25 +3,23 @@ extends ../layout
 block content
     div(class='col-xs-12 top-space')
         a(href="/series/create")
-            i(class='fa fa-3x fa-plus-circle' aria-hidden="true")
-    hr
+            i(class='fa fa-3x fa-plus-circle' aria-hidden"true")
+        hr
 
-    div(class='container-fluid')
-        h2(class='text-success') Lista de series
-        div(class='row')
-            for serie in series
-                div(class='col-xs-4 col-md-3 col-lg-2 serie-item')
-                    a(href="#")
-                        div(class='spotlight_container')
-                            div(class='spotlight_image' style='background-image:url('+ serie.image+')')
-                                img(src="http://playview.io/themes/pv/images/blank-img.gif"
-                                width="300" height="445" class="img-responsive")
-                            div(class='spotlight_title') #{serie.nombre}
-                                div(class='info-series')
-                                    if serie.enEmision
-                                        span(class="badge badge-success") En emision
-                                    else
-                                        span(class="badge badge-danger") Finalizada
-                            div(class='spotlight_info')
-                                    p(class='panel panel-info text-center text-info')
+    div(class='row')
+        for serie in series
+            a(href="/series/details/" + serie.serieID)
+                div(class='col-xs-6 col-md-4 col-lg-2')
+                    div(class='spotlight_container')
+                        div(class='spotlight_image', style='background-image:url('+ serie.image+')')
+                            img(src="http://playview.io/themes/pv/images/blank-img.gif"
+                            width="300" height="445" class="img-responsive")
+                        div(class='spotlight_title') #{serie.nombre}
+                            div(class='info-series')
+                                if serie.enEmision
+                                    span(class="label label-success") En emision
+                                else
+                                    span(class="label label-danger") Finalizada
+                        div(class='spotlight_info')
+                                p(class='panel panel-info text-center text-info')
                                     |Genero #{serie.genero}
