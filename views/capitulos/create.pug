@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+    h4 #{temporada.serie.nombre}
+    h5 Temporada #{temporada.numero}
+    p Agregar capítulo
+    hr
+    div(class='col-xs-12 col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-3')
+        form(action='/Capitulos/create', method='POST', class='form-horizontal')
+            div(class="form-group")
+                label(for="nombre") Nombre
+                input(class="form-control" id="nombre" name="nombre" placeholder="Nombre" type='text' required)
+
+            div(class="form-group")
+                label(for="numero") Número
+                input(class="form-control" id="numero" name="numero" placeholder="Número" type='number' required)
+
+            div(class="form-group")
+                label(for="video") Enlace
+                input(class="form-control" id="video" name="video" placeholder="Enlace" type='text' required)
+
+            div(class="form-group")
+                input(class="form-control" id="temporadaID" name="temporadaID" type="hidden" value=temporada.temporadaID)
+
+            div(class="form-group form-options")
+                input(type="submit" value="Create" class="btn btn-primary")
+                a(class='btn btn-default' href='/temporadas/details' + temporada.temporadaID) Cancel

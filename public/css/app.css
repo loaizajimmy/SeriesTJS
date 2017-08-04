@@ -25,6 +25,10 @@ dd {
 div.options a{
     padding-left: 2em;
 }
+
+li a.nav-link i{
+    padding-right: .5em;
+}
 /* ID Class*/
 
 /* Class*/
@@ -42,7 +46,19 @@ div.options a{
 .top-space {
     padding-top: 1em;
 }
+.big-top-space {
+    padding-top: 5em;
+}
 
 .tablaTemporadas tbody tr:hover {
     background-color: darkslategray;
+}
+
+.form-options a{
+    margin: 2em;
+}
+
+.reproductor iframe{
+    width: 100%;
+    height: 300px;
 }

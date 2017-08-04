@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+    h4 Editar serie
+    hr
+    div(class='col-xs-12 col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-3')
+        //form(id = 'formEdit' action="javascript:void(0);")
+        form(id = 'formEdit' action="/series/edit/" + serie.serieID + "?_method=PUT"  method='POST')
+            div(class="form-group")
+                input(class="form-control" id="serieID" name="serieID" value=serie.serieID type='hidden')
+
+            div(class="form-group")
+                label(for="nombre") Nombre
+                input(class="form-control" id="nombre" name="nombre" value=serie.nombre placeholder="Nombre" required)
+
+            div(class="form-group")
+                label(for="fechaEstreno") Fecha Estreno
+                input(class="form-control" id="fechaEstreno" name="fechaEstreno" value=serie.fechaEstreno placeholder="Fecha de Estreno" type="date" required)
+
+            div(class="form-group")
+                label(for="checkbox1") En Emision
+                input( id="checkbox1" name="enEmision" type="checkbox" checked=true)
+
+            div(class="form-group")
+                label(for="genero") Genero
+                input(class="form-control" id="genero" name="genero" value=serie.genero placeholder="Genero" required)
+
+            div(class="form-group")
+                label(for="imagen") Imagen
+                input(class="form-control" id="imagen" name="imagen" value=serie.image placeholder="Imagen" required)
+
+            div(class="form-group")
+                input(type="submit" value="Edit" class="btn btn-primary" id='btn-edit')

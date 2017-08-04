@@ -23,4 +23,5 @@ block content
             dd #{serie.genero}
 
         div
-            label(class='btn btn-danger') Delete
+            form(action='/series/delete/' + serie.serieID + '?_method=DELETE' method='POST')
+                button(type='submit' class='btn btn-danger') Borrar
